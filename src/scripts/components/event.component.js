@@ -1,9 +1,4 @@
-// Syntactic Sugar
 class EventComponent {
-  constructor() {
-    console.log("Class EventComponent");
-  }
-
   template() {
     return `
     <div class="event" data-type="component">
@@ -14,12 +9,10 @@ class EventComponent {
     `;
   }
 
-  render(placeholder) {
+  render($container) {
     // Compile
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(this.template(), 'text/html');
-    const component = doc.body.firstElementChild;
+    const $component = compile(this.template());
     // Rendering
-    placeholder.append(component);
+    $container.append($component);
   }
 }

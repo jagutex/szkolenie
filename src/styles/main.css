@@ -53,13 +53,13 @@ main {
   margin: 5px 0;
 }
 
-.events-list {
+.event-list {
   display: flex;
   justify-content: start;
   flex-wrap: wrap;
 }
 
-.events-list .event {
+.event-list .event {
   width: 300px;
   margin: 0 10px;
 }
