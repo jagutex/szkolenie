@@ -1,19 +1,24 @@
 function main() {
   // console.log('hello world');
-  const $eventList = document.querySelector(".event-list");
 
-  for (let i = 0; i < 3; i++) {
-    const evt = new EventComponent();
-    evt.render($eventList);
-  }
+  const $outlet = document.querySelector("#content");
 
-  // Duplicated Code (Anti-pattern)
-  // const evt1 = new EventComponent();
-  // evt1.render(eventList);
-  // const evt2 = new EventComponent();
-  // evt2.render(eventList);
-  // const evt3 = new EventComponent();
-  // evt3.render(eventList);
+  const routes = {
+    "/": () => {
+      const page = new HomePage();
+      page.render($outlet);
+    },
+    "/map": () => {
+      const page = new MapPage();
+      page.render($outlet);
+    },
+  };
+  const router = new Router();
+  router.use(routes);
+  router.start();
+
+  // Hermetyzacja / Encapsulate
+  // router.#resolveRoute();
 }
 
 // main();

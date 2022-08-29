@@ -1,5 +1,5 @@
 /**
- * @param {string} template 
+ * @param {string} template
  * @returns {Element|null}
  */
 function compile(template) {
